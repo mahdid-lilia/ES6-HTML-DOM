@@ -1,8 +1,27 @@
 
-let usename = "John"
+//import {sumAll} from "./4.modules"
+
+//import sumAll from "./4.modules"
+
+const {sumAll} = require("./4.modules")
+sumAll(20,10)
+
+window.logToConsole = function (msg) {
+  console.log(sumAll(20,10))
+}
+
+console.log("testing")
+
+let username = "John"
 let userAge = "20"
 
-let userInfo = {usename, userAge}
+let userInfo1 = {
+  username: username,
+  userAge: userAge
+}
+//console.log(userInfo1)
+
+let userInfo = {username, userAge}
 //console.log(userInfo)
 
 const student = {
@@ -25,8 +44,8 @@ const ielts_scores1 = student.ielts_scores;
 //console.log(`Old method: ${firstname1}, ${lastname1}, ${country1}`) //"Old Style: Jhon, Snow, England"
 
 //ES6 Style
-const { firstname, lastname, country, ielts_scores } = student;
-//console.log(`New method: ${firstname} ${lastname} ${firstname}`) //"ES6 Style: Jhon, Snow, England"
+const { firstname, lastname, country } = student;
+//console.log(`New method: ${firstname} ${lastname} ${country}`) //"ES6 Style: Jhon, Snow, England"
 
 // Object destruction
 const planet = {  
@@ -40,18 +59,21 @@ const {
     faction, 
     weather= 'default conditions' } = planet;
 
-//console.log(name); 
-//console.log(faction); 
-//console.log(weather); 
+// console.log(planetName); 
+// console.log(faction); 
+// console.log(weather); 
  
 //renaming
 const { 
     planetName: system, 
     faction: team, 
     weather: conditions = 'default conditions' } = planet;
-//console.log(system); 
-//console.log(team); 
-//console.log(conditions);
+
+    const newPlanet={system,team, conditions}
+    //console.log(newPlanet)
+// console.log(system); 
+// console.log(team); 
+// console.log(conditions);
 
 
 //Spread Operator
@@ -67,8 +89,16 @@ const student2 = {
     country: 'USA',
     city: 'califonia'
 };
+
+const student3 = {...student1, country: "Algeria"}
+
+//console.log(student3)
+
+const student4={...student1,firstname: 'Petter',lastname: 'Fan',country: 'USA',city: 'califonia' }
   
-const newstud = {...student1 , ...student2};
+//console.log(student4)
+
+const newstud = {...student2 , ...student1};
 
 //console.log(newstud);
 
